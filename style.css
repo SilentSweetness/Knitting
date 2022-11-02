@@ -10,7 +10,7 @@ h1 {
 }
 table {
     height: 500px;
-    border: 1px solid black;
+    border: 1px solid rgb(0, 0, 0);
     overflow: scroll;
     margin: 50px;
 }
@@ -40,6 +40,6 @@ a {
 }
 
 a:hover {
-    color: green;
+    color: rgb(4, 148, 4);
     text-decoration: none;
 }
