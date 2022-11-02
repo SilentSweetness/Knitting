@@ -34,3 +34,12 @@ span {
     justify-content: end;
     align-items: start;
 }
+
+a {
+    cursor: pointer;
+}
+
+a:hover {
+    color: green;
+    text-decoration: none;
+}
