@@ -1,19 +1,20 @@
 const button = document.getElementById("enter");
 const input = document.getElementById("userinput");
 const ul = document.querySelector("ul");
-
 const deleteButton = document.getElementsByClassName("delete");
 
+//checks the input length 
 function inputLength() {
     return input.value.length;
 }
 
+//creates a list item with a delete button
 function createListElement() {
-        var li = document.createElement("li");
+        const li = document.createElement("li");
         li.appendChild(document.createTextNode(input.value));
         ul.appendChild(li);
         input.value = "";
-        var deleteButton = document.createElement("button");
+        const deleteButton = document.createElement("button");
         deleteButton.setAttribute("class", "delete");
         deleteButton.appendChild(document.createTextNode("Delete"));
         li.appendChild(deleteButton);
@@ -22,12 +23,14 @@ function createListElement() {
           });
 }
 
+//creates list item after mouse click
 function addListAfterClick() {
         if (inputLength() > 0) {
         createListElement();
         }
 }
 
+//creates list item after keypress
 function addListAfterKeypress(event) {
         if (inputLength() > 0 && event.keyCode === 13){
             createListElement();
@@ -35,6 +38,7 @@ function addListAfterKeypress(event) {
     }
 
 
+//deletes item from list
     Array.prototype.slice.call(deleteButton).forEach(function(item) {
         item.addEventListener("click", function(e) {
           e.target.parentNode.remove()
