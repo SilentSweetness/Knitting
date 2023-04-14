@@ -2,6 +2,32 @@ const button = document.getElementById("enter");
 const input = document.getElementById("userinput");
 const ul = document.querySelector("ul");
 const deleteButton = document.getElementsByClassName("delete");
+const totalCount = document.getElementById("total-count")
+//select increment and decrement buttons
+const incrementCount = document.getElementById("increment-count");
+const decrementCount = document.getElementById("decrement-count");
+//global counter
+let count = 0;
+//display initial count value
+totalCount.innerHTML = count;
+//function to increment count
+const handleIncrement = () => {
+    count++;
+    totalCount.innerHTML = count;
+}
+//function to increment count
+//todo add if statement for <0
+const handleDecrement = () => {
+    if (count < 0 || count === 0) {
+        return 0;
+    } else {
+        count--;
+    }
+    totalCount.innerHTML = count;
+}
+//add click event
+incrementCount.addEventListener("click", handleIncrement);
+decrementCount.addEventListener("click", handleDecrement);
 
 //checks the input length 
 function inputLength() {

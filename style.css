@@ -43,3 +43,15 @@ a:hover {
     color: rgb(4, 148, 4);
     text-decoration: none;
 }
+
+#up-arrow,
+#down-arrow {
+    height: 20px;
+    width: 20px;
+}
+
+
+
+#total-count {
+    font-size: larger;
+}
