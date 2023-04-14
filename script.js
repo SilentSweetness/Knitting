@@ -16,7 +16,6 @@ const handleIncrement = () => {
     totalCount.innerHTML = count;
 }
 //function to increment count
-//todo add if statement for <0
 const handleDecrement = () => {
     if (count < 0 || count === 0) {
         return 0;
