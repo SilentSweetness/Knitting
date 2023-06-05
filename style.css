@@ -45,13 +45,16 @@ a:hover {
 }
 
 #up-arrow,
-#down-arrow {
+#down-arrow,
+#row-up-arrow,
+#row-down-arrow {
     height: 20px;
     width: 20px;
 }
 
 
 
-#total-count {
+#total-count,
+#row-total-count {
     font-size: larger;
 }

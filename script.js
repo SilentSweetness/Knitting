@@ -75,3 +75,31 @@ function addListAfterKeypress(event) {
 button.addEventListener("click", addListAfterClick);
 
 input.addEventListener("keypress", addListAfterKeypress);
+
+/*row counter 
+figure out how to not repeat code*/
+const rowTotalCount = document.getElementById("row-total-count")
+//select increment and decrement buttons
+const rowIncrementCount = document.getElementById("row-increment-count");
+const rowDecrementCount = document.getElementById("row-decrement-count");
+//global counter
+let rowCount = 0;
+//display initial count value
+rowTotalCount.innerHTML = count;
+//function to increment count
+const rowIncrement = () => {
+    count++;
+    rowTotalCount.innerHTML = count;
+}
+//function to increment count
+const rowDecrement = () => {
+    if (count < 0 || count === 0) {
+        return 0;
+    } else {
+        count--;
+    }
+    rowTotalCount.innerHTML = count;
+}
+//add click event
+rowIncrementCount.addEventListener("click", handleIncrement);
+rowDecrementCount.addEventListener("click", handleDecrement);
