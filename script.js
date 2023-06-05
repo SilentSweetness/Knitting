@@ -2,32 +2,40 @@ const button = document.getElementById("enter");
 const input = document.getElementById("userinput");
 const ul = document.querySelector("ul");
 const deleteButton = document.getElementsByClassName("delete");
-/*const totalCount = document.getElementById("total-count")
+
+//knitting counters
+const createCounter = (counterName) => {
+const totalCount = document.getElementById(`${counterName}-total-count`)
 //select increment and decrement buttons
-const incrementCount = document.getElementById("increment-count");
-const decrementCount = document.getElementById("decrement-count");
-//global counter
+const incrementCount = document.getElementById(`${counterName}-increment-count`);
+const decrementCount = document.getElementById(`${counterName}-decrement-count`);
+
 let count = 0;
 //display initial count value
 totalCount.innerHTML = count;
 //function to increment count
-const handleIncrement = () => {
-    count++;
-    totalCount.innerHTML = count;
+const increment = () => {
+count++;
+totalCount.innerHTML = count;
 }
 //function to increment count
-const handleDecrement = () => {
-    if (count < 0 || count === 0) {
-        return 0;
-    } else {
-        count--;
-    }
-    totalCount.innerHTML = count;
+const decrement = () => {
+if (count < 0 || count === 0) {
+    return 0;
+} else {
+    count--;
+}
+totalCount.innerHTML = count;
 }
 //add click event
-incrementCount.addEventListener("click", handleIncrement);
-decrementCount.addEventListener("click", handleDecrement);
-*/
+incrementCount.addEventListener("click", increment);
+decrementCount.addEventListener("click", decrement);
+}
+
+createCounter('global')
+createCounter('row')
+createCounter('stitch')
+
 //checks the input length 
 function inputLength() {
     return input.value.length;
@@ -75,37 +83,3 @@ function addListAfterKeypress(event) {
 button.addEventListener("click", addListAfterClick);
 
 input.addEventListener("keypress", addListAfterKeypress);
-
-const createCounter = (counterName) => {
-    /*counter 
-figure out how to not repeat code*/
-const totalCount = document.getElementById(`${counterName}-total-count`)
-//select increment and decrement buttons
-const incrementCount = document.getElementById(`${counterName}-increment-count`);
-const decrementCount = document.getElementById(`${counterName}-decrement-count`);
-//global counter
-let count = 0;
-//display initial count value
-totalCount.innerHTML = count;
-//function to increment count
-const increment = () => {
-    count++;
-    totalCount.innerHTML = count;
-}
-//function to increment count
-const decrement = () => {
-    if (count < 0 || count === 0) {
-        return 0;
-    } else {
-        count--;
-    }
-    totalCount.innerHTML = count;
-}
-//add click event
-incrementCount.addEventListener("click", increment);
-decrementCount.addEventListener("click", decrement);
-}
-
-createCounter('global')
-createCounter('row')
-createCounter('stitch')
