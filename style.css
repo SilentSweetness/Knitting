@@ -44,17 +44,20 @@ a:hover {
     text-decoration: none;
 }
 
-#up-arrow,
-#down-arrow,
+#global-up-arrow,
+#global-down-arrow,
 #row-up-arrow,
-#row-down-arrow {
+#row-down-arrow,
+#stitch-up-arrow,
+#stitch-down-arrow {
     height: 20px;
     width: 20px;
 }
 
 
 
-#total-count,
-#row-total-count {
+#global-total-count,
+#row-total-count,
+#stitch-total-count {
     font-size: larger;
 }

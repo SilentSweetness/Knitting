@@ -2,7 +2,7 @@ const button = document.getElementById("enter");
 const input = document.getElementById("userinput");
 const ul = document.querySelector("ul");
 const deleteButton = document.getElementsByClassName("delete");
-const totalCount = document.getElementById("total-count")
+/*const totalCount = document.getElementById("total-count")
 //select increment and decrement buttons
 const incrementCount = document.getElementById("increment-count");
 const decrementCount = document.getElementById("decrement-count");
@@ -27,7 +27,7 @@ const handleDecrement = () => {
 //add click event
 incrementCount.addEventListener("click", handleIncrement);
 decrementCount.addEventListener("click", handleDecrement);
-
+*/
 //checks the input length 
 function inputLength() {
     return input.value.length;
@@ -76,30 +76,36 @@ button.addEventListener("click", addListAfterClick);
 
 input.addEventListener("keypress", addListAfterKeypress);
 
-/*row counter 
+const createCounter = (counterName) => {
+    /*counter 
 figure out how to not repeat code*/
-const rowTotalCount = document.getElementById("row-total-count")
+const totalCount = document.getElementById(`${counterName}-total-count`)
 //select increment and decrement buttons
-const rowIncrementCount = document.getElementById("row-increment-count");
-const rowDecrementCount = document.getElementById("row-decrement-count");
+const incrementCount = document.getElementById(`${counterName}-increment-count`);
+const decrementCount = document.getElementById(`${counterName}-decrement-count`);
 //global counter
-let rowCount = 0;
+let count = 0;
 //display initial count value
-rowTotalCount.innerHTML = count;
+totalCount.innerHTML = count;
 //function to increment count
-const rowIncrement = () => {
+const increment = () => {
     count++;
-    rowTotalCount.innerHTML = count;
+    totalCount.innerHTML = count;
 }
 //function to increment count
-const rowDecrement = () => {
+const decrement = () => {
     if (count < 0 || count === 0) {
         return 0;
     } else {
         count--;
     }
-    rowTotalCount.innerHTML = count;
+    totalCount.innerHTML = count;
 }
 //add click event
-rowIncrementCount.addEventListener("click", handleIncrement);
-rowDecrementCount.addEventListener("click", handleDecrement);
+incrementCount.addEventListener("click", increment);
+decrementCount.addEventListener("click", decrement);
+}
+
+createCounter('global')
+createCounter('row')
+createCounter('stitch')
